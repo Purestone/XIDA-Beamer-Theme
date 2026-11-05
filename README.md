@@ -2,7 +2,9 @@
 
 An unofficial University of Sydney-inspired Beamer theme adapted from [SUDA Beamer Theme](https://github.com/ymliucs/SUDA-Beamer-Theme) by Yumeng Liu, itself based on [THU Beamer Theme](https://www.overleaf.com/latex/templates/thu-beamer-theme/vwnqmzndvwyb).
 
-[View the example presentation](preview.pdf).
+![XIDA Beamer Theme cover preview](assets/cover.png)
+
+[View the complete example presentation](preview.pdf).
 
 ## Features
 
