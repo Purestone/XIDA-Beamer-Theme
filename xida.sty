@@ -1,0 +1,118 @@
+\ProvidesPackage{xida}[2026/11/05 Sydney adaptation of SUDA Beamer Theme]
+\RequirePackage{iftex}
+\ifXeTeX\else
+  \PackageError{xida}{XeLaTeX is required}{Compile with xelatex to use Times New Roman.}
+\fi
+\RequirePackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmonofont{Times New Roman}
+\mode<presentation>
+
+\newif\ifbeamer@secheader
+\beamer@secheaderfalse
+
+%\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+
+\useoutertheme[footline=authorinstitutetitle,subsection=false]{smoothbars}
+% Flat colour bars, retaining smoothbars' section navigation without its fades.
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=3.75ex]{section in head/foot}%
+    \insertnavigation{\paperwidth}%
+  \end{beamercolorbox}%
+}
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=.3cm,rightskip=.3cm plus1fil,sep=.4ex]{frametitle}%
+    \usebeamerfont{frametitle}\strut\insertframetitle\strut\par%
+    \ifx\insertframesubtitle\@empty\else%
+      {\usebeamerfont{framesubtitle}\insertframesubtitle\strut\par}%
+    \fi%
+  \end{beamercolorbox}%
+}
+\makeatletter % [add curpage/total page at the bottom](http://tex.stackexchange.com/questions/100838/beamer-dresden-theme-miniframes-appeareance-and-frame-number-insertion)
+\newcommand{\frameofframes}{/}
+\newcommand{\setframeofframes}[1]{\renewcommand{\frameofframes}{#1}}
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[ht=2.8ex,dp=1.6ex,leftskip=.35cm,rightskip=.35cm]{xida footer}%
+    \usebeamerfont{author in head/foot}\insertshortinstitute\hfill
+    \insertframenumber\,/\,\inserttotalframenumber%
+  \end{beamercolorbox}%
+}
+\makeatother
+
+\useinnertheme{circles}
+
+%\useoutertheme{default}
+%\useinnertheme[shadow=true]{rounded}
+
+\definecolor{ochre}{HTML}{E74726}
+\colorlet{MasterbrandOrange}{ochre}
+\definecolor{MasterbrandBlack}{HTML}{0A0A0A}
+\definecolor{MasterbrandCharcoal}{HTML}{424242}
+\definecolor{MasterbrandWhite}{HTML}{FFFFFF}
+\colorlet{suda}{MasterbrandOrange}
+\setbeamercolor{footline}{bg=suda}
+\setbeamercolor{frametitle}{bg=suda,fg=white}
+\setbeamercolor{title}{bg=suda}
+\setbeamerfont{frametitle}{size=\large}
+%\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{section in toc shaded}[default][55]
+\setbeamercolor{bibliography entry author}{fg=MasterbrandBlack}
+\setbeamercolor{bibliography entry title}{fg=MasterbrandBlack}
+\setbeamercolor{bibliography entry location}{fg=MasterbrandCharcoal}
+\setbeamercolor{bibliography entry note}{fg=MasterbrandCharcoal}
+\setbeamertemplate{caption}[numbered]
+
+\setbeamercolor{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor{palette secondary}{fg=MasterbrandCharcoal,bg=MasterbrandOrange!12!MasterbrandWhite}
+\setbeamercolor{palette tertiary}{fg=MasterbrandWhite,bg=ochre}
+\setbeamercolor{palette quaternary}{fg=MasterbrandWhite,bg=ochre}
+%\setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+\setbeamercolor{titlelike}{parent=palette primary}
+\setbeamercolor{institute in head/foot}{fg=MasterbrandWhite,bg=MasterbrandOrange}
+\setbeamercolor{section in head/foot}{fg=MasterbrandWhite,bg=ochre}
+\setbeamercolor{xida footer}{fg=MasterbrandWhite,bg=ochre}
+\setbeamercolor{frame number}{fg=MasterbrandCharcoal}
+
+%% try
+\setbeamercolor{block title}{bg=suda,fg=white}
+\setbeamercolor{fine separation line}{}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
+\setbeamercolor{palette sidebar quaternary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar tertiary}{use=normal text,fg=normal text.fg}
+%\setbeamercolor{palette sidebar quaternary}{fg=white}
+\setbeamercolor{section in sidebar}{fg=MasterbrandCharcoal}
+\setbeamercolor{section in sidebar shaded}{fg=MasterbrandCharcoal!60!MasterbrandWhite}
+\setbeamercolor{separation line}{}
+\setbeamercolor{sidebar}{bg=suda}
+\setbeamercolor{sidebar}{parent=palette primary}
+\setbeamercolor{structure}{fg=MasterbrandOrange}
+\setbeamercolor{normal text}{fg=MasterbrandBlack,bg=MasterbrandWhite}
+\setbeamercolor{block body}{fg=MasterbrandBlack,bg=MasterbrandCharcoal!8!MasterbrandWhite}
+\setbeamercolor{block title alerted}{fg=MasterbrandWhite,bg=ochre}
+\setbeamercolor{block body alerted}{fg=MasterbrandBlack,bg=ochre!8!MasterbrandWhite}
+\setbeamercolor{example text}{fg=MasterbrandBlack}
+\setbeamercolor{alerted text}{fg=ochre}
+\setbeamercolor{block title example}{fg=MasterbrandWhite,bg=MasterbrandBlack}
+\setbeamercolor{block body example}{fg=MasterbrandBlack,bg=MasterbrandBlack!6!MasterbrandWhite}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{subsection in sidebar}{fg=MasterbrandCharcoal}
+\setbeamercolor{subsection in sidebar shaded}{fg=MasterbrandCharcoal!60!MasterbrandWhite}
+\AtBeginSection[]{
+	\begin{frame}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+	\end{frame}
+}
+\AtBeginSubsection[]{
+	\begin{frame}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+	\end{frame}
+}
+
+\mode
+<all>
