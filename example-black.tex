@@ -1,0 +1,88 @@
+\documentclass[aspectratio=43]{beamer}
+\usepackage{xida-black}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\title[XIDA Black Theme]{XIDA Black Theme}
+\subtitle{A University of Sydney Presentation Template}
+\author[Your Name]{Your Name}
+\institute[The University of Sydney]{The University of Sydney}
+\date{\today}
+\begin{document}
+\begin{frame}
+  \titlepage
+  \vspace{-0.45cm}
+  \begin{center}\includegraphics[height=1.9cm]{figs/usyd_shield_colour.pdf}\end{center}
+\end{frame}
+\begin{frame}{Contents}\tableofcontents\end{frame}
+\section{Typography and lists}
+\begin{frame}{Typography and emphasis}
+  Times New Roman is used for presentation text. A sentence can contain
+  \textbf{bold}, \textit{italic}, and \alert{highlighted} text.
+  \begin{block}{Key message}
+    Standard blocks use the theme colours.
+  \end{block}
+\end{frame}
+\begin{frame}{Lists and hierarchy}
+  \begin{itemize}
+    \item First point in the presentation
+    \item Second point with a nested list:
+      \begin{itemize}\item Supporting detail\item Another detail\end{itemize}
+  \end{itemize}
+  \begin{enumerate}
+    \item Define the problem.
+    \item Present the evidence.
+    \item Discuss the implications.
+  \end{enumerate}
+\end{frame}
+\section{Blocks and mathematics}
+\begin{frame}{Block styles}
+  \begin{block}{Standard block}Use for a central idea or definition.\end{block}
+  \begin{exampleblock}{Finding}Evidence is presented in a distinct example block.\end{exampleblock}
+  \begin{alertblock}{Important}Use emphasis sparingly for a key limitation.\end{alertblock}
+\end{frame}
+\begin{frame}{Mathematical expressions}
+  Inline notation: $x_t \in \mathbb{R}^{d}$, with parameter vector $\theta$.
+  \begin{equation}
+    \hat{y}_{t+1}=f_{\theta}(x_t), \qquad
+    \mathcal{L}(\theta)=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2.
+  \end{equation}
+  \begin{block}{Definition}
+    The loss measures mean squared prediction error.
+  \end{block}
+\end{frame}
+\begin{frame}{A theorem and a proof}
+  \begin{theorem}[Cauchy--Schwarz inequality]
+    For vectors $x,y\in\mathbb{R}^{n}$,
+    \[
+      |x^{\mathsf T}y|\leq \lVert x\rVert_2\lVert y\rVert_2.
+    \]
+  \end{theorem}
+  \begin{proof}
+    The result follows from the non-negativity of $\lVert x-ty\rVert_2^2$.
+  \end{proof}
+\end{frame}
+\section{Results and references}
+\begin{frame}{Example results}
+  \begin{columns}[T]
+    \column{0.49\textwidth}
+      \begin{exampleblock}{Finding}A compact result can sit beside a table.\end{exampleblock}
+    \column{0.47\textwidth}
+      \centering
+      \begin{tabular}{lr}\toprule Method & Score \\ \midrule Baseline & 0.72 \\ Proposed & 0.84 \\ \bottomrule\end{tabular}
+  \end{columns}
+  \vspace{0.6cm}
+  {\small Scores are illustrative and do not represent experimental results.}
+\end{frame}
+\begin{frame}{Quotation and citation}
+  \begin{quote}
+    A concise quotation or observation can be displayed with indentation.
+  \end{quote}
+  A typical in-text reference appears here \cite{knuth1984}.
+\end{frame}
+\begin{frame}{References}
+  \begin{thebibliography}{9}
+    \bibitem{knuth1984} D. E. Knuth, \textit{The TeXbook}. Addison-Wesley, 1984.
+  \end{thebibliography}
+\end{frame}
+\begin{frame}{Thank you}\centering\Large Questions?\end{frame}
+\end{document}

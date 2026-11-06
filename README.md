@@ -6,6 +6,18 @@ An unofficial University of Sydney-inspired Beamer theme adapted from [SUDA Beam
 
 [View the complete example presentation](preview.pdf).
 
+### Colourful
+
+![Colourful theme cover](assets/cover-colourful.png)
+
+[View the colourful example](preview-colourful.pdf).
+
+### Black
+
+![Black theme cover](assets/cover-black.png)
+
+[View the black example](preview-black.pdf).
+
 ## Features
 
 - 4:3 slides with flat ochre (`#E74726`) navigation and title bars.
@@ -21,6 +33,8 @@ Install a TeX distribution with XeLaTeX and install Times New Roman separately. 
 \usepackage{xida}
 ```
 
+For the colourful or black variant, copy `xida.sty` and the corresponding variant file, and replace the package line with `\usepackage{xida-colourful}` or `\usepackage{xida-black}`. Build `example-colourful.tex` or `example-black.tex` to see the complete examples.
+
 Text uses Times New Roman; mathematical symbols use the available TeX math fonts.
 
 ## Colours
@@ -31,6 +45,9 @@ Text uses Times New Roman; mathematical symbols use the available TeX math fonts
 | `MasterbrandBlack` | `#0A0A0A` |
 | `MasterbrandCharcoal` | `#424242` |
 | `MasterbrandWhite` | `#FFFFFF` |
+| `ShieldRed` (colourful) | `#D70A2B` |
+| `ShieldGold` (colourful) | `#F9B500` |
+| `ShieldBlue` (colourful) | `#174F95` |
 
 ## Attribution and branding
 
