@@ -2,19 +2,21 @@
 
 An unofficial University of Sydney-inspired Beamer theme adapted from [SUDA Beamer Theme](https://github.com/ymliucs/SUDA-Beamer-Theme) by Yumeng Liu, itself based on [THU Beamer Theme](https://www.overleaf.com/latex/templates/thu-beamer-theme/vwnqmzndvwyb).
 
-![XIDA Beamer Theme cover preview](assets/cover.png)
+### Ochre
 
-[View the complete example presentation](preview.pdf).
+<img src="assets/cover.png" alt="Ochre theme cover" width="400">
+
+[View the Ochre example](preview.pdf).
 
 ### Colourful
 
-![Colourful theme cover](assets/cover-colourful.png)
+<img src="assets/cover-colourful.png" alt="Colourful theme cover" width="400">
 
 [View the colourful example](preview-colourful.pdf).
 
 ### Black
 
-![Black theme cover](assets/cover-black.png)
+<img src="assets/cover-black.png" alt="Black theme cover" width="400">
 
 [View the black example](preview-black.pdf).
 
