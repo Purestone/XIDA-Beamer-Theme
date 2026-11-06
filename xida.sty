@@ -24,6 +24,7 @@
 }
 \setbeamertemplate{frametitle}{%
   \nointerlineskip%
+  \vskip-0.2pt% Avoid a rendering seam between adjacent coloured bars.
   \begin{beamercolorbox}[wd=\paperwidth,leftskip=.3cm,rightskip=.3cm plus1fil,sep=.4ex]{frametitle}%
     \usebeamerfont{frametitle}\strut\insertframetitle\strut\par%
     \ifx\insertframesubtitle\@empty\else%
